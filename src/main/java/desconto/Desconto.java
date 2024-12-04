@@ -1,7 +1,7 @@
 package desconto;
 
-import desconto.Pedido;
+import entity.Pedido;
 
 public interface Desconto {
-    double calcular(Pedido pedido);
+    double calcular(entity.Pedido pedido);
 }

@@ -1,7 +1,6 @@
 package entity;
 
 import desconto.Desconto;
-import desconto.Pedido;
 
 public class DescontoPorTipoDeItem implements Desconto {
     @Override

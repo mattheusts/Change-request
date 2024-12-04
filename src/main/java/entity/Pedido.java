@@ -1,7 +1,6 @@
-package desconto;
+package entity;
 
-import entity.Cliente;
-import entity.Item;
+import entity.*;
 import services.GerenciadorDeDescontos;
 
 import java.time.LocalDate;

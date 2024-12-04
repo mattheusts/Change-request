@@ -1,7 +1,7 @@
 package services;
 
 import desconto.Desconto;
-import desconto.Pedido;
+import entity.Pedido;
 
 import java.util.List;
 
