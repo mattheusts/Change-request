@@ -25,8 +25,8 @@ public class Main {
 
         pedido.setCodigoDeCupom("DESC10");
 
-//        pedido.registrarLog(new XMLLog());
-//        pedido.registrarLog(new DBLog());
+        pedido.registrarLog(new XMLLog());
+        pedido.registrarLog(new DBLog());
         pedido.registrarLog(new JSONLog());
     }
 }
