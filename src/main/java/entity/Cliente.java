@@ -2,14 +2,12 @@ package entity;
 
 public class Cliente {
     private String nome;
-    private String email;
-    private String telefone;
+    private String cpf;
     private String tipo;
 
-    public Cliente(String nome, String email, String telefone, String tipo) {
+    public Cliente(String nome, String cpf, String tipo) {
         this.nome = nome;
-        this.email = email;
-        this.telefone = telefone;
+        this.cpf = cpf;
         this.tipo = tipo;
     }
 
@@ -17,25 +15,23 @@ public class Cliente {
         return nome;
     }
 
-    public String getEmail() {
-        return email;
+    public String getCpf() {
+        return cpf;
     }
 
-    public String getTelefone() {
-        return telefone;
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getTipo() {
         return tipo;
     }
 
-    @Override
-    public String toString() {
-        return "Cliente{" +
-                "nome='" + nome + '\'' +
-                ", email='" + email + '\'' +
-                ", telefone='" + telefone + '\'' +
-                ", tipo='" + tipo + '\'' +
-                '}';
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 }

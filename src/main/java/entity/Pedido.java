@@ -1,9 +1,13 @@
 package entity;
 
 import entity.*;
+import log.ILog;
 import services.GerenciadorDeDescontos;
+import services.UsuarioLogadoService;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -89,6 +93,19 @@ public class Pedido {
 
     public LocalDate getDataPedido() {
         return dataPedido;
+    }
+
+    public void registrarLog(ILog ilog) {
+        String nomeUsuario = UsuarioLogadoService.getNomeUsuario();
+        String data = dataPedido.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        String hora = LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss"));
+        String codigoPedido = hashCode() + "";
+        String nomeCliente = cliente.getNome();
+
+        String rawLog = String.format("NOME_USUARIO: %s | Data: %s | Hora: %s | codigo_pedido: %s | Nome de Operação: Calculo do valor total do pedido (%s) | Nome_Cliente: %s",
+                nomeUsuario, data, hora, codigoPedido, this.getValorFinal(), nomeCliente);
+
+        ilog.escrever(rawLog);
     }
 
     @Override
